@@ -27,16 +27,6 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark- LifeCycle
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -47,12 +37,12 @@
     self.aryDevices = [[NSMutableArray alloc] init];
     
     self.scrollView.contentSize = CGSizeMake(750,390);
-    self.pageControl.currentPage=0;
-    self.pageControl.numberOfPages=2;
+    self.pageControl.currentPage = 0;
+    self.pageControl.numberOfPages = 2;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     valueArray = [[NSMutableArray alloc]init];
-    for(int i = 0; i < 30; i++){
+    for(int i = 0; i < 30; i++) {
         NSString *value = [[NSString alloc]initWithFormat:@"%c", (char)(i + 97)];
         [valueArray addObject:value];
     }
@@ -128,60 +118,43 @@
     self.blunoDev = dev;
 }
 
--(void)didDisconnectDevice:(BlunoDevice*)dev{
-}
-
--(void)didWriteData:(BlunoDevice*)dev{
-    
-}
-
--(void)didReceiveData:(NSData*)data Device:(BlunoDevice*)dev{
-    
-}
-
-
-
 - (IBAction)OnAction:(id)sender {
-    if([OnButton isSelected]==YES){
-        if([OffButton isSelected]==NO){
-            [OnButton setSelected:YES];
+    if ([OnButton isSelected] == YES) {
+        if ([OffButton isSelected] == NO) {
+            [OnButton setSelected: YES];
             [OnButton setTitleColor:[UIColor colorWithRed:47/255.0 green:232/255.0 blue:158/255.0 alpha:1 ]forState: UIControlStateNormal];
         }
-    }else{
-        [OnButton setSelected:YES];
-        [OffButton setSelected:NO];
+    } else {
+        [OnButton setSelected: YES];
+        [OffButton setSelected: NO];
         [OnButton setTitleColor:[UIColor colorWithRed:47/255.0 green:232/255.0 blue:158/255.0 alpha:1 ]forState: UIControlStateNormal];
         [OffButton setTitleColor:[UIColor colorWithRed:195/255.0 green:195/255.0 blue:195/255.0 alpha:1 ]forState: UIControlStateNormal];
     }
 }
 
 - (IBAction)OffAction:(id)sender {
-    if([OffButton isSelected]==YES){
-        if([OnButton isSelected]==NO){
+    if ([OffButton isSelected] == YES) {
+        if ([OnButton isSelected] == NO) {
             [OffButton setSelected:YES];
             [OnButton setTitleColor:[UIColor colorWithRed:195/255.0 green:195/255.0 blue:195/255.0 alpha:1 ]forState: UIControlStateNormal];
-            
         }
-    }else{
+    } else {
         [OffButton setSelected:YES];
         [OnButton setSelected:NO];
         [OffButton setTitleColor:[UIColor colorWithRed:47/255.0 green:232/255.0 blue:158/255.0 alpha:1 ]forState: UIControlStateNormal];
         [OnButton setTitleColor:[UIColor colorWithRed:195/255.0 green:195/255.0 blue:195/255.0 alpha:1 ]forState: UIControlStateNormal];
-        
     }
     
     NSData *data = [[NSString stringWithFormat:@"E"] dataUsingEncoding:NSUTF8StringEncoding];
-    [self.blunoManager writeDataToDevice:data Device:self.blunoDev];
+    [self.blunoManager writeDataToDevice: data Device:self.blunoDev];
 }
 -(IBAction)showMusic:(id)sender{
     [self.navigationController pushViewController:music animated:YES];
 }
 
-
 -(void)scrollViewDidScroll:(UIScrollView *)sender{
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth ) + 1;
     self.pageControl.currentPage = page;
-    
 }
 @end

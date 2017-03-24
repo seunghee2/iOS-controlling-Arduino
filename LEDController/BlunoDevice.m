@@ -12,8 +12,7 @@
 
 @synthesize bReadyToWrite = _bReadyToWrite;
 
--(id)init
-{
+-(id)init {
     self = [super init];
     _bReadyToWrite = NO;
     return self;

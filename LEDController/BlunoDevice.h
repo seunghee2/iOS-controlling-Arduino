@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BlunoDevice : NSObject
-{
-@public
-    BOOL _bReadyToWrite;
+@interface BlunoDevice : NSObject {
+    @public BOOL _bReadyToWrite;
 }
 
 @property(strong, nonatomic) NSString* identifier;

@@ -248,6 +248,7 @@
 				TargetAttributes = {
 					1E0D62DC1C5F2F95009C118F = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = WKBY8JU3YQ;
 					};
 					1E0D62F51C5F2F95009C118F = {
 						CreatedOnToolsVersion = 7.2;
@@ -457,7 +458,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WKBY8JU3YQ;
 				INFOPLIST_FILE = LEDController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = seung.LEDController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,7 +471,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WKBY8JU3YQ;
 				INFOPLIST_FILE = LEDController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = seung.LEDController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -542,6 +547,7 @@
 				1E0D630C1C5F2F96009C118F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E0D630D1C5F2F96009C118F /* Build configuration list for PBXNativeTarget "LEDControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +556,7 @@
 				1E0D630F1C5F2F96009C118F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E0D63101C5F2F96009C118F /* Build configuration list for PBXNativeTarget "LEDControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +565,7 @@
 				1E0D63121C5F2F96009C118F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
