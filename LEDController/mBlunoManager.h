@@ -17,9 +17,9 @@
 -(void) bleDidUpdateState:(BOOL)bleSupported;
 -(void) didDiscoverDevice:(BlunoDevice*)dev;
 -(void) readyToCommunicate:(BlunoDevice*)dev;
-//-(void) didDisconnectDevice:(BlunoDevice*)dev;
-//-(void) didWriteData:(BlunoDevice*)dev;
-//-(void) didReceiveData:(NSData*)data Device:(BlunoDevice*)dev;
+-(void) didDisconnectDevice:(BlunoDevice*)dev;
+-(void) didWriteData:(BlunoDevice*)dev;
+-(void) didReceiveData:(NSData*)data Device:(BlunoDevice*)dev;
 
 @end
 

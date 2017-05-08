@@ -43,7 +43,7 @@
     CBUUID *sUUID = [CBUUID UUIDWithString:kBlunoService];
     CBUUID *cUUID = [CBUUID UUIDWithString:kBlunoDataCharacteristic];
     
-    [BLEUtility setNotificationForCharacteristic:peripheral sCBUUID:sUUID cCBUUID:cUUID enable:YES];
+    [BLEUtility setNotificationForCharacteristic: peripheral sCBUUID:sUUID cCBUUID:cUUID enable:YES];
     NSString* key = [peripheral.identifier UUIDString];
     BlunoDevice* blunoDev = [self.dicBlunoDevices objectForKey:key];
     blunoDev->_bReadyToWrite = YES;

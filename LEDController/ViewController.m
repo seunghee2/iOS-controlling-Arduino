@@ -62,7 +62,7 @@
     [OnButton setSelected:YES];
 }
 
--(IBAction)WhatColorIsIt:(UIButton*)sender{
+-(IBAction)WhatColorIsIt:(UIButton*)sender {
     const CGFloat *components = CGColorGetComponents(sender.backgroundColor.CGColor);
     CGFloat redValue = components[0] * 255.0;
     CGFloat greenValue = components[1] * 255.0;
@@ -76,7 +76,7 @@
     [self.blunoManager writeDataToDevice:data Device:self.blunoDev];
 }
 
--(IBAction)sendBrightness:(UIButton*)sender{
+-(IBAction)sendBrightness:(UIButton*)sender {
     char c = (char)((int)sender.tag + 65);
     NSString *strTemp = [NSString stringWithFormat:@"%c", c];
     NSData *data = [strTemp dataUsingEncoding:NSUTF8StringEncoding];
@@ -84,7 +84,7 @@
 }
 
 
-- (void)receiveData:(int)index{
+- (void)receiveData:(int)index {
     NSLog(@"%d", index);
     self.indexTest = index;
     NSString *musicIndex = [[NSString alloc]initWithFormat:@"%d", index];
@@ -94,15 +94,15 @@
 
 #pragma mark- DFBlunoDelegate
 
--(void)bleDidUpdateState:(BOOL)bleSupported{
+-(void)bleDidUpdateState:(BOOL)bleSupported {
     if(bleSupported)
         [self.blunoManager scan];
 }
 
--(void)didDiscoverDevice:(BlunoDevice*)dev{
+-(void)didDiscoverDevice:(BlunoDevice*)dev {
     BOOL bRepeat = NO;
     
-    for (BlunoDevice* bleDevice in self.aryDevices){
+    for (BlunoDevice* bleDevice in self.aryDevices) {
         if ([bleDevice isEqual:dev]) {
             bRepeat = YES;
             break;
@@ -114,7 +114,7 @@
     }
 }
 
--(void)readyToCommunicate:(BlunoDevice*)dev{
+-(void)readyToCommunicate:(BlunoDevice*)dev {
     self.blunoDev = dev;
 }
 
@@ -148,11 +148,11 @@
     NSData *data = [[NSString stringWithFormat:@"E"] dataUsingEncoding:NSUTF8StringEncoding];
     [self.blunoManager writeDataToDevice: data Device:self.blunoDev];
 }
--(IBAction)showMusic:(id)sender{
+-(IBAction)showMusic:(id)sender {
     [self.navigationController pushViewController:music animated:YES];
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)sender{
+-(void)scrollViewDidScroll:(UIScrollView *)sender {
     CGFloat pageWidth = self.scrollView.frame.size.width;
     int page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth ) + 1;
     self.pageControl.currentPage = page;
